@@ -8,7 +8,7 @@
     --border-glow: rgba(255, 77, 0, 0.3);
     --neon-green: #39ff14;
     --container-width: 1200px;
-    --padding-mobile: 20px;
+    --padding-mobile: 15px;
 }
 
 * {
@@ -17,13 +17,17 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 body {
     background-color: var(--bg-dark);
     background: radial-gradient(circle at 50% 0%, #2a0a0a, #050505 60%);
     font-family: 'Inter', sans-serif;
     color: var(--text-main);
-    overflow-x: hidden;
-    width: 100%;
     min-height: 100vh;
 }
 
@@ -74,13 +78,13 @@ a {
 
 .hero-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
 }
 
 .hero-text h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(2.5rem, 10vw, 5rem);
     margin-bottom: 20px;
     text-shadow: 0 0 20px rgba(255, 77, 0, 0.2);
     word-wrap: break-word;
@@ -105,6 +109,7 @@ a {
     align-items: center;
     text-align: center;
     overflow: hidden;
+    width: 100%;
 }
 
 .card:hover {
@@ -126,6 +131,7 @@ a {
 .brand-name {
     font-size: 3rem;
     font-weight: 700;
+    word-break: break-word;
 }
 
 .brand-name.lykitys { color: #ff8c00; }
@@ -169,6 +175,7 @@ a {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 1rem;
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -195,6 +202,7 @@ a {
     font-weight: 800;
     font-size: 0.8rem;
     transform: rotate(5deg);
+    z-index: 10;
 }
 
 .badge.new { background: var(--neon-green); color: black; }
@@ -208,7 +216,7 @@ a {
 }
 
 .offers-section {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .offers-section + .offers-section {
@@ -218,9 +226,9 @@ a {
 .section-title {
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     color: var(--text-muted);
-    word-wrap: break-word;
+    padding: 0 10px;
 }
 
 .offers-grid {
@@ -249,6 +257,7 @@ a {
     max-width: 800px;
     margin: 0 auto 40px auto;
     line-height: 1.6;
+    padding: 0 20px;
 }
 
 .footer-icons {
@@ -290,7 +299,7 @@ a {
     }
 
     .hero-text h1 {
-        font-size: 3rem; 
+        font-size: 3.5rem; 
     }
 
     .hero-text .subtitle {
@@ -303,20 +312,24 @@ a {
 }
 
 @media (max-width: 600px) {
+    .hero-text h1 {
+        font-size: 2.8rem;
+        line-height: 1;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        margin-bottom: 30px;
+    }
+
     .offers-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .card {
-        padding: 20px;
-        width: 100%;
-    }
-
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 30px;
-        padding: 0 10px;
+        padding: 25px 20px;
+        min-width: 0;
     }
 
     .brand-name {
@@ -331,14 +344,17 @@ a {
         font-size: 1.8rem;
     }
 
+    .highlight {
+        font-size: 1.5rem;
+    }
+
     .btn {
-        padding: 12px 30px;
-        font-size: 0.9rem;
         width: 100%;
+        padding: 14px 20px;
+        font-size: 0.95rem;
     }
     
-    .hero-text h1 {
-        font-size: 2.2rem;
-        line-height: 1.1;
+    .navbar .logo {
+        font-size: 1.8rem;
     }
 }
