@@ -83,7 +83,7 @@ a {
 }
 
 .hero-text h1 {
-    font-size: 5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     text-shadow: 0 0 20px rgba(255, 77, 0, 0.2);
 }
@@ -326,4 +326,5 @@ a {
     padding-top: 0; 
 
 }
+
 
